@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;Kayıt yok&quot; ve &quot;şüpheli&quot; · Saha Pusula</title>
+<meta name="description" content="Bir sistemin &quot;yok&quot; demesi ile &quot;bilmiyorum&quot; demesi aynı şey değil.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html">Hasan Mirza Kılınç</a>
+  <nav><a href="../index.html#yazilar">Yazılar</a><a href="../index.html#projeler">Projeler</a><a href="../index.html#hakkimda">Hakkımda</a></nav>
+</div></header>
+<main class="wrap post">
+<p class="meta"><a href="../index.html#yazilar">Saha Pusula serisi</a> · Bölüm 3 · Kasım 2026</p>
+<h1>&quot;Kayıt yok&quot; ve &quot;şüpheli&quot;</h1>
+<article>
+<p>Bu bölümde sahada yaşadığımız bir olaydan ve bundan sonra yaptığım düzeltmelerden bahsetmek istiyorum.</p>
+<p>22 adreslik gerçek bir liste ile deneme yaptık. 15 tanesi doğrulandı ama 7 tanesi rotaya girmedi. Neden girmediğine baktığımda iki sorun çıktı.</p>
+<p>İlki: TKGM bir parseli neden vermediğini aslında söylüyordu, ama bu sebep ekranda görünmüyordu, sadece sistem kayıtlarında kalıyordu. Yani ekip adresin neden rotada olmadığını bilmiyordu.</p>
+<p>İkincisi: devredilmiş parseller. Bir parsel birleştirildiyse ya da bölündüyse TKGM eski numaraya konum vermiyor. Fakat gelen cevabın içinde yeni parselin bilgisi de var. Eski kod buna hiç bakmıyordu.</p>
+<p>Bir de şöyle bir şey yaşadım. Bir gün yakın parsel aramayı 6 kere denedim, 6'sı da boş geldi. Büyük ihtimalle TKGM'nin günlük sorgu sınırı dolmuştu. Ama uygulama "TKGM'de böyle bir kayıt yok" ile "TKGM cevap vermedi" durumunu aynı gösteriyordu. Kullanıcı da haliyle o numaranın gerçekten olmadığını düşünüyordu.</p>
+<p>Yaptığım düzeltmeler:</p>
+<ol>
+<li>Her kaydın detayında artık TKGM'nin verdiği sebep yazıyor.</li>
+<li>Parsel tek bir yeni parsele devredildiyse sistem kendisi eşleştiriyor ve bunu ekranda yazıyor. Birden fazla parsele devredildiyse tahmin yapmıyor, seçenekleri listeliyor, seçimi kullanıcı yapıyor.</li>
+<li>"Kayıt yok" ile "cevap alınamadı" artık ayrı ayrı gösteriliyor.</li>
+<li>TKGM sorgu sayacı. TKGM günlük kaç sorguya izin verdiğini açıklamıyor. Bir gün 119 sorguda hata aldım, ertesi gün 50 civarında. Yani sınır her gün aynı da değil. Bu yüzden ekrana arabalardaki benzin göstergesi gibi bir sayaç ekledim. O gün kaç sorgu yapıldığını sayıyor ve ne kadar kaldığını gösteriyor. Tam sınırı bilmediğim için gördüğüm en düşük değeri baz aldım, biraz temkinli çalışıyor. Böylece gösterge azaldığında kullanıcı boş bir sonuç görürse "parsel yok" değil, "bugünlük sorgu hakkı bitmiş olabilir" diye düşünebiliyor.</li>
+</ol>
+<p>Buradan öğrendiğim şu oldu: bir sistemin "yok" demesi ile "bilmiyorum" demesi aynı şey değil ve bu farkı kullanıcıya göstermek gerekiyor. Göstermezsek, var olan bir adrese ekip hiç gitmiyor.</p>
+<p>Sıradaki bölümde liste sırasına göre rota çıkarmanın bize neye mal olduğunu anlatacağım. Şimdilik sağlıcakla kalın.</p>
+</article>
+<nav class="pager"><a href="saha-pusula-2-fikir.html">← Bölüm 2</a><a href="saha-pusula-4-rota.html">Bölüm 4 →</a></nav>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Hasan Mirza Kılınç</span>
+  <span><a href="https://www.linkedin.com/in/hasanmirzakilinc">LinkedIn</a> · <a href="https://github.com/hasanmirzakilinc">GitHub</a> · <a href="mailto:hasanmirzak59@gmail.com">E-posta</a></span>
+</div></footer>
+</body>
+</html>
