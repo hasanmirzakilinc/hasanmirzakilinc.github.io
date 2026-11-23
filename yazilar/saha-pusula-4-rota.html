@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liste sırasıyla gitmenin bedeli · Saha Pusula</title>
+<meta name="description" content="Rota motorunu neden değiştirdim? 15 adreslik bir listede 112 km&#x27;den 42 km&#x27;ye.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html">Hasan Mirza Kılınç</a>
+  <nav><a href="../index.html#yazilar">Yazılar</a><a href="../index.html#projeler">Projeler</a><a href="../index.html#hakkimda">Hakkımda</a></nav>
+</div></header>
+<main class="wrap post">
+<p class="meta"><a href="../index.html#yazilar">Saha Pusula serisi</a> · Bölüm 4 · Kasım 2026</p>
+<h1>Liste sırasıyla gitmenin bedeli</h1>
+<article>
+<p>Bu bölümde rota motorunu neden değiştirdiğimi ve liste sırasıyla gitmenin bize neye mal olduğunu anlatmak istiyorum.</p>
+<p>Listede alt alta duran iki adres haritada birbirinden çok uzak olabiliyor. İlk sürüm rotaları liste sırasına göre çıkarıyordu. İlk 9 adres bir rota, sonraki 9 adres başka bir rota. 9 olmasının sebebi Google Maps'in bir rotaya en fazla 9 durak almasıydı. Bir testte merkezden yaklaşık 25 km uzaktaki iki nokta, Yenimahalle'deki adreslerle aynı rotaya girmişti. Yani ekip mahalle içinde iş yaparken bir anda şehrin dışına çıkıp geri dönmek zorunda kalabiliyordu.</p>
+<p>v2'de sırayı değiştirdim. Önce adresleri haritadaki yakınlığa göre gruplara ayırıyorum. Sonra her grubun içinde "bulunduğun yerden en yakın adrese git" kuralıyla sıralıyorum. Karmaşık bir şey değildi ama etkisi büyük oldu. 15 adreslik gerçek bir listede toplam güzergâh <strong>112 km'den yaklaşık 42 km'ye</strong> indi. Bu tek bir testin sonucu, sahadaki ortalama değil. Ama yönü göstermesi için yeterliydi.</p>
+<p>Sonra canlı bir rota sonucunda bir şey fark ettim. Bir grupta Semizkumlar bir uçtaydı, Ortaköy öbür uçta. Sebebi şuydu: gruplar o gün hangi adresler girildiyse ona göre her seferinde baştan oluşuyordu. Bir gün yan yana olan iki mahalle ertesi gün farklı gruplara düşebiliyordu.</p>
+<p>Çözüm olarak Silivri'nin 36 mahallesini harita üzerindeki konumlarına göre 5 sabit gruba böldük. Bu gruplar vardiyadaki 5 ekibimize denk geliyor. Artık hangi mahallenin hangi ekibe ait olduğu her gün aynı. Ekip de kendi bölgesini biliyor.</p>
+<p>Listeler büyüdükçe kazanç da arttı:</p>
+<table><thead><tr><th>Liste büyüklüğü</th><th>Daha kısa yol</th></tr></thead><tbody>
+<tr><td>10 parsel</td><td>%47,8</td></tr>
+<tr><td>15 parsel</td><td>%53,3</td></tr>
+<tr><td>20 parsel</td><td>%57,9</td></tr>
+<tr><td>30 parsel</td><td>%60,2</td></tr>
+</tbody></table>
+<p>Adres sayısı arttıkça liste sırasıyla gitmek daha çok zigzag demek oluyor.</p>
+<p>Buradan öğrendiğim şu oldu: matematik olarak iyi çıkan bir çözüm sahada işlemeyebilir. Algoritmayı sahanın düzenine uydurmak gerekiyor, tersi değil.</p>
+<p>Bu bölümde eklediklerim:</p>
+<ol>
+<li>Bazı ekiplerde Google Maps tam olarak çalışmadığı için Yandex Maps'i de ekledim.</li>
+<li>Bitirilen mahalle/ada/parsel denetimi "kaydet" tuşu ile hem kayıtlardan hem de rota sonucundan kalkıyor. Ekip her seferinde tekrar kümeleme yapmak zorunda kalmıyor.</li>
+<li>TKGM sorgusu yüzünden bekleyenlerin listesi paylaşıldı.</li>
+</ol>
+<p>Sıradaki bölümde uygulamanın sorgu yapan bir araçtan ekibin ortak hafızasına nasıl dönüştüğünü anlatacağım. Şimdilik sağlıcakla kalın.</p>
+</article>
+<nav class="pager"><a href="saha-pusula-3-kayit-yok.html">← Bölüm 3</a><span></span></nav>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Hasan Mirza Kılınç</span>
+  <span><a href="https://www.linkedin.com/in/hasanmirzakilinc">LinkedIn</a> · <a href="https://github.com/hasanmirzakilinc">GitHub</a> · <a href="mailto:hasanmirzak59@gmail.com">E-posta</a></span>
+</div></footer>
+</body>
+</html>
