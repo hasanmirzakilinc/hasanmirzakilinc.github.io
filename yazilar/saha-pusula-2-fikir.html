@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bu fikir kimin ve nasıl oluşturuldu? · Saha Pusula</title>
+<meta name="description" content="Fikrin sahibi Süleyman Usta, ilk sürüm ve neden v2&#x27;yi baştan yazdım.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html">Hasan Mirza Kılınç</a>
+  <nav><a href="../index.html#yazilar">Yazılar</a><a href="../index.html#projeler">Projeler</a><a href="../index.html#hakkimda">Hakkımda</a></nav>
+</div></header>
+<main class="wrap post">
+<p class="meta"><a href="../index.html#yazilar">Saha Pusula serisi</a> · Bölüm 2 · Ekim 2026</p>
+<h1>Bu fikir kimin ve nasıl oluşturuldu?</h1>
+<article>
+<p>Bu bölümde Saha Pusula'nın kimin fikri ile ve hangi çalışmalarla geliştirildiğini anlatmak istiyorum.</p>
+<p>Saha Pusula'nın fikri ilk olarak Süleyman Keke ustamız ile ortaya atıldı. Ölçü yetkililerimizden Süleyman Usta, yaptıkları işin daha verimli ve daha kısa sürede yapılabileceğini ve bunun için bir fikri olduğunu söyledi.</p>
+<p>ChatGPT ve Codex ile bir site hazırladı. Bu, Saha Pusula'nın ilk versiyonuydu. Bir süre test ettik. Doğal olarak birtakım sorunları vardı ama rota optimizasyonu yapabiliyor ve TKGM'den verileri doğru şekilde çekebiliyordu.</p>
+<p>Sonrasında biraz daha geliştirme yapmış ve bize sunmak istemişti. Ancak geçirdiği bir rahatsızlık yüzünden yaptığı işi askıya almak zorunda kaldı.</p>
+<p>Aradan yaklaşık bir ay geçti. Ben sistemin nasıl çalıştığını öğrenmek için onun üzerinde çalışmaya başladım. Öğrenirken yaptıklarımın sonunda bugün size anlattığım Saha Pusula v2 doğdu.</p>
+<p>İlk sürüm şunu yapıyordu:</p>
+<ol>
+<li>Mahalle, ada ve parsel listesini alıyor.</li>
+<li>Sonucu üç gruba ayırıyor: doğrulandı, kayıt yok, elle kontrol gerekli.</li>
+<li>Doğrulananları en fazla 9 duraklık Google Maps rotalarına çeviriyor.</li>
+</ol>
+<p>Basit bir araçtı ama işe yaradı. Her adresi tek tek aramak yerine listeyi yapıştırıp sonucu bekliyorduk. Ancak bir eksik bulduk: tüm ekip ortak bir hesapla giriyordu ve bir değişiklik yapıldığında kim tarafından yapıldığını anlayamıyorduk.</p>
+<p>Bu yüzden Saha Pusula'yı v2 olarak baştan yazdım. İlk sürümün çalışan kısımlarını (mahalle tablosu, parsel merkezini bulan hesap, doğrulama kuralları) kaynak koduna bakarak aynen taşıdım.</p>
+<p>Ekleme ve geliştirmelerim:</p>
+<ol>
+<li>Herkesin kendi kullanıcı adı ve şifresi var, şifreler hash'lenerek saklanıyor.</li>
+<li>Çok sayıda hatalı girişte hesap geçici olarak kilitleniyor.</li>
+<li>Yönetici ve ekip hesapları ayrı.</li>
+<li>Cloudflare Workers ve SQLite tabanlı bir veritabanı.</li>
+</ol>
+<p>Bir yanlışım da oldu. İlk taslakta herkesin yalnızca kendi listesini göreceği bir yapı kurdum. İlk sürümün kodunu açınca gerçekte tek bir ortak kayıt tablosu olduğunu, ekibin aynı kayıtları gördüğünü fark ettim ve düzelttim.</p>
+<p>Sonraki bölüm: TKGM'de "kayıt yok" ile "cevap verememesi" aynı şey değil.</p>
+</article>
+<nav class="pager"><a href="saha-pusula-1-olcum.html">← Bölüm 1</a><a href="saha-pusula-3-kayit-yok.html">Bölüm 3 →</a></nav>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Hasan Mirza Kılınç</span>
+  <span><a href="https://www.linkedin.com/in/hasanmirzakilinc">LinkedIn</a> · <a href="https://github.com/hasanmirzakilinc">GitHub</a> · <a href="mailto:hasanmirzak59@gmail.com">E-posta</a></span>
+</div></footer>
+</body>
+</html>
